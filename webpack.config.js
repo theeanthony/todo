@@ -6,7 +6,7 @@ module.exports = {
     entry: './src/index.js',
     plugins: [
         new HTMLWebpackPlugin({
-            template: './src/index.html',
+            template: './public/index.html',
         }),
     ],
     output: {
@@ -18,8 +18,12 @@ module.exports = {
         rules: [
             {
                 test: /\.css$/i,
-                use: ['style-loader', 'css-loader'],
+                use: ['style-loader', 'css-loader', 'sass-loader'],
             },
         ],
     },
+    devServer: {
+        static: path.join(__dirname, 'public'),
+        port:9000
+    }
 }

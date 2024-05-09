@@ -1,6 +1,6 @@
 
 
-class ToDo {
+export default class ToDo {
 
     constructor(
         title,
@@ -13,7 +13,7 @@ class ToDo {
 
     ){
 
-        this.title = tile;
+        this.title = title;
         this.description = description; 
         this.dueDate = dueDate;
         this.priority = priority;
@@ -21,7 +21,7 @@ class ToDo {
 
         this.completed = completed ? true : false; 
 
-        if (Object.prototype.toString.call(completionDate) === '[object Date'){
+        if (Object.prototype.toString.call(completionDate) === '[object Date]'){
             this.completionDate = completionDate; 
         }
     }
